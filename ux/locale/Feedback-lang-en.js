@@ -1,6 +1,9 @@
 /**
- * 
+ * Copyright (c) 2012 André Fiedler, <https://twitter.com/sonnenkiste>
+ *
+ * license: MIT-style license
  */
+
 Ext.onReady(function(){
     
     if(Ux.window.FeedbackWindow){
