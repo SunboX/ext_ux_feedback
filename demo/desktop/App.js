@@ -124,7 +124,7 @@ Ext.define('MyDesktop.App', {
                     },
                     listener: {
                         feedbackSuccess: function(){
-                            document.location = 'data/showFeedback.php'
+                            window.open('data/showFeedback.php');
                         }
                     }
                 },
