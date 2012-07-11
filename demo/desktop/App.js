@@ -116,7 +116,7 @@ Ext.define('MyDesktop.App', {
                 {
                     xtype: 'feedbackButton',
                     text: 'Give Feedback !',
-                    remoteUrl: 'server/sendFeedback.php',
+                    remoteUrl: 'desktop/server/sendFeedback.php',
                     flex: 1,
                     id: 'feedback-button',
                     style: {
@@ -124,7 +124,7 @@ Ext.define('MyDesktop.App', {
                     },
                     listener: {
                         feedbackSuccess: function(){
-                            window.open('data/showFeedback.php');
+                            window.open('desktop/server/showFeedback.php');
                         }
                     }
                 },

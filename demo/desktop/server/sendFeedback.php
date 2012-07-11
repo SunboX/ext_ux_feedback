@@ -12,11 +12,11 @@ $feedback .= 'Client Betriebssystem: ' . $_POST['platform'] . "\n\n";
 $feedback .= 'Feedback: ' . "\n\n" . $_POST['feedback'];
 
 if(isset($_POST['screenshot'])){
-    $data = base64_decode(preg_replace('/^data:image\/jpeg;base64,/', '', $_POST['screenshot')));
+    $data = base64_decode(preg_replace('/^data:image\/jpeg;base64,/', '', $_POST['screenshot']));
 }
 
 // attach ScreenShot
-file_put_contents(session_id() . '.jpg', $data);
+file_put_contents(dirname(__FILE__) . '/data/' . session_id() . '.jpg', $data);
 
 $_SESSION['screenshot'] = session_id() . '.jpg';
 $_SESSION['feedback'] = $feedback;
