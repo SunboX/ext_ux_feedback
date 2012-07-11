@@ -122,7 +122,7 @@ Ext.define('MyDesktop.App', {
                     style: {
                         background: 'yellow'
                     },
-                    listener: {
+                    listeners: {
                         feedbackSuccess: function(){
                             Ext.Msg.show({
                                  title:'DEMOTIME!',
