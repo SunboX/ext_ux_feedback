@@ -1,17 +1,6 @@
 <?php
-     
-$data = null;
 
-$feedback  = 'Server Datum/Zeit: ' . date('d.m.Y - H:i:s') . ' (Beginn Zusammenstellung E-Mail - Server)' . "\n\n";
-$feedback .= 'Client Datum/Zeit: ' . date('d.m.Y - H:i:s', strtotime($_POST['datetime'])) . ' (Beginn Feedback-Versand - Client)' . "\n\n";
-$feedback .= 'Client Browser: ' . $_POST['useragent'] . "\n\n";
-$feedback .= 'Client Betriebssystem: ' . $_POST['platform'] . "\n\n";
-
-$feedback .= 'Feedback: ' . "\n\n" . $_POST['feedback'];
-
-if(isset($_POST['screenshot'])){
-    $data = base64_decode(preg_replace('/^data:image\/jpeg;base64,/', '', $_POST['screenshot']));
-}
+session_start();
 
 // Create the message
 $message = Swift_Message::newInstance()
@@ -23,14 +12,14 @@ $message = Swift_Message::newInstance()
     ->setFrom(array('--EMAIL--' => 'Demo App'))
     
     // Set the To addresses with an associative array
-    ->setTo(array('--EMAIL--' => 'Demo Admin'))
+    ->setTo(array($_POST['email'] => 'Demo App'))
     
     // Give it a body
     ->setBody($feedback);
 
 // attach ScreenShot
-if(!empty($data)){
-    $attachment = Swift_Attachment::newInstance($data, 'ScreenShot.jpg', 'image/jpeg');
+if(!empty($_SESSION['screenshot'])){
+    $attachment = Swift_Attachment::newInstance($_SESSION['screenshot'], 'ScreenShot.jpg', 'image/jpeg');
     $message->attach($attachment);
 }
 

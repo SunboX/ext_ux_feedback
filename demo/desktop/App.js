@@ -124,7 +124,42 @@ Ext.define('MyDesktop.App', {
                     },
                     listener: {
                         feedbackSuccess: function(){
-                            window.open('desktop/server/showFeedback.php');
+                            Ext.Msg.show({
+                                 title:'DEMOTIME!',
+                                 msg: 'Would you like to recieve the feedback as eMail than klick "yes". For opening it as new window, click "no".',
+                                 buttons: Ext.Msg.YESNO,
+                                 icon: Ext.Msg.QUESTION,
+                                 fn: function(btn, text){
+                                    if (btn === 'ok'){
+                                        Ext.Msg.prompt('Your eMail', 'Please enter your eMail adress:', function(btn, text){
+                                            if (btn == 'ok'){
+                                                Ext.Ajax.request({
+                                                    method: 'POST',
+                                                    url: 'desktop/server/sendFeedbackAsEMail.php',
+                                                    params: {
+                                                        email: text
+                                                    },
+                                                    success: function(response){
+                                                        Ext.Msg.alert({
+                                                            icon: Ext.Msg.INFO,
+                                                            title: 'eMail message send',
+                                                            msg: 'Please check you incomming eMail mesages. You should have feedback. ;o)',
+                                                            buttons: Ext.Msg.OK
+                                                        });
+                                                    },
+                                                    failure: function(response, opts) {
+                                                        var obj = Ext.decode(response.responseText);
+                                                        if(obj.msg)
+                                                            Ext.Msg.alert(me.messages.errorTitle, obj.msg);
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    } else {
+                                        window.open('desktop/server/showFeedback.php');
+                                    }
+                                }
+                            });
                         }
                     }
                 },
