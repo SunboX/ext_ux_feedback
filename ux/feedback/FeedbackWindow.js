@@ -114,10 +114,10 @@ Ext.define('Ux.feedback.FeedbackWindow', {
      * @type Object
      */
     buttonText: {
-        ok: 'Feedback senden',
-        yes: 'Ja',
-        no: 'Nein',
-        cancel: 'Abbrechen'
+        ok: 'Give feedback',
+        yes: 'Yes',
+        no: 'No',
+        cancel: 'Cancel'
     },
 
     buttonIds: [

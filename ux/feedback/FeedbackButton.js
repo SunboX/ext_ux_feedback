@@ -6,13 +6,13 @@ Ext.define('Ux.feedback.FeedbackButton', {
     remoteUrl  : '',
     jpegQuality: 0.5, // 0.1 to 1 (1 = 100%)
     messages   : {
-        title                : 'Feedback geben',
-        descriptionWithCanvas: 'Mit Hilfe der Feedback-Funktion können Sie Verbesserungsvorschläge zu diesem Produkt senden. Wir freuen uns über Problemberichte, Anmerkungen zu Funktionen und Kommentare im Allgemeinen. Es wurde automatisch ein ScreenShot erstellt und Ihrem Feedback angehangen.<br/><br/> Zusätzlich können Sie eine kurze Beschreibung zu Ihrem Feedback verfassen:',
-        description          : 'Mit Hilfe der Feedback-Funktion können Sie Verbesserungsvorschläge zu diesem Produkt senden. Wir freuen uns über Problemberichte, Anmerkungen zu Funktionen und Kommentare im Allgemeinen.<br/><br/> Ihr Feedback:',
-        loading              : 'Feedback wird versendet...',
-        successTitle         : 'Feedback wurde versandt',
-        successMsg           : 'Vielen Dank für Ihr Feedback!',
-        errorTitle           : 'Fehler'
+        title                : 'Give feedback',
+        descriptionWithCanvas: 'With the help of the feedback function, you can send suggestions to this product. We welcome bug reports, suggestions and comments to functions in general. A ScreenShot was automatically created and appended to your feedback <br/> In addition, you can write a short description for your feedback:',
+        description          : 'With the help of the feedback function, you can send suggestions to this product. We welcome bug reports, suggestions and comments to functions in general <br/> your feedback:',
+        loading              : 'Feedback will be sent...',
+        successTitle         : 'Feedback has been sent',
+        successMsg           : 'Thank you for your feedback!',
+        errorTitle           : 'Error'
     },
     
     // private
