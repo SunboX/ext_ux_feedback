@@ -21,7 +21,7 @@ $message = Swift_Message::newInstance()
 
 // attach ScreenShot
 if(!empty($_SESSION['screenshot'])){
-    $attachment = Swift_Attachment::newInstance($_SESSION['screenshot'], 'ScreenShot.jpg', 'image/jpeg');
+    $attachment = Swift_Attachment::newInstance(file_get_contents(dirname(__FILE__) . '/data/' . $_SESSION['screenshot']), 'ScreenShot.jpg', 'image/jpeg');
     $message->attach($attachment);
 }
 
