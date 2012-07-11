@@ -130,8 +130,8 @@ Ext.define('MyDesktop.App', {
                                  buttons: Ext.Msg.YESNO,
                                  icon: Ext.Msg.QUESTION,
                                  fn: function(btn, text){
-                                    if (btn === 'ok'){
-                                        Ext.Msg.prompt('Your eMail', 'Please enter your eMail adress:', function(btn, text){
+                                    if (btn === 'yes'){
+                                        Ext.Msg.prompt('Your eMail', 'Please enter your eMail address:', function(btn, text){
                                             if (btn == 'ok'){
                                                 Ext.Ajax.request({
                                                     method: 'POST',
@@ -143,7 +143,7 @@ Ext.define('MyDesktop.App', {
                                                         Ext.Msg.alert({
                                                             icon: Ext.Msg.INFO,
                                                             title: 'eMail message send',
-                                                            msg: 'Please check you incomming eMail mesages. You should have feedback. ;o)',
+                                                            msg: 'Please check you incomming eMail messages. You should have feedback. ;o)',
                                                             buttons: Ext.Msg.OK
                                                         });
                                                     },
