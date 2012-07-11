@@ -7,7 +7,7 @@ The idea to this Ext 4 extension is based on Google+ feedback functionality. Thi
 The ScreenShot functionality is realized by use of <a href="https://www.github.com/niklasvh/html2canvas/">html2canvas</a>.
 
 
-If no canvas is supported by your users browser, it will only aks for some notes and send you some client informations.
+If no canvas is supported by your users browser, it will only aks for some notes and send you some client information.
 
 ### Usage ###
 
