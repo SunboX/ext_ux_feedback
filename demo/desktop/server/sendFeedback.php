@@ -2,16 +2,17 @@
 
 session_start();
 
-$dir = opendir(dirname(__FILE__) . '/data/');
-$filename = session_id() . time() . '.jpg'
+$dir = dirname(__FILE__) . '/data/';
+$filename = session_id() . time() . '.jpg';
 
 // delete old screenshots
-if($dir) {
+$handle = opendir($dir);
+if($handle) {
     // read directory contents
-    while(false !== ($file = readdir($dir))) {
+    while(false !== ($file = readdir($handle))) {
         // check the create time of each file (older than 1 hour)
-        if(filemtime($file) < time() - 3600) {
-            unlink($file);
+        if($file !== '.' && $file !== '..' && filemtime($dir . $file) < time() - 3600) {
+            unlink($dir . $file);
         }
     }
 }

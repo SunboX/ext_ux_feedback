@@ -36,7 +36,7 @@ if(!empty($data)){
     $message->attach($attachment);
 }
 
-$attachment = Swift_Attachment::newInstance(mb_convert_encoding(var_export($_SESSION), 'UTF-8'), 'Session.txt', 'text/plain');
+$attachment = Swift_Attachment::newInstance(mb_convert_encoding(var_export($_SESSION, true), 'UTF-8'), 'Session.txt', 'text/plain');
 $message->attach($attachment);
 
 // Create the Transport
