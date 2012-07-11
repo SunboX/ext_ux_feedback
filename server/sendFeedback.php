@@ -28,7 +28,7 @@ $message = Swift_Message::newInstance()
     ->setTo(array('--EMAIL--' => 'Demo Admin'))
     
     // Give it a body
-    ->setBody($feedback);
+    ->setBody($_SESSION['feedback']);
 
 // attach ScreenShot
 if(!empty($data)){
