@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once dirname(__FILE__) . '/../../../lib/swift_mailer/swift_required.php';
+
 // Create the message
 $message = Swift_Message::newInstance()
     

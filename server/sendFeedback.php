@@ -1,5 +1,7 @@
 <?php
-     
+
+require_once dirname(__FILE__) . '/../lib/swift_mailer/swift_required.php';
+
 $data = null;
 
 $feedback  = 'Server Datum/Zeit: ' . date('d.m.Y - H:i:s') . ' (Beginn Zusammenstellung E-Mail - Server)' . "\n\n";
