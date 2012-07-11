@@ -1,6 +1,19 @@
 <?php
 
 session_start();
+
+$dir = opendir(dirname(__FILE__) . '/data/');
+
+// delete old screenshots
+if($dir) {
+    // read directory contents
+    while(false !== ($file = readdir($dir))) {
+        // check the create time of each file (older than 1 hour)
+        if(filemtime($file) < time() - 3600) {
+            unlink($file);
+        }
+    }
+}
      
 $data = '';
 
@@ -16,7 +29,7 @@ if(isset($_POST['screenshot'])){
 }
 
 // attach ScreenShot
-file_put_contents(dirname(__FILE__) . '/data/' . session_id() . '.jpg', $data);
+file_put_contents($dir . session_id() . '.jpg', $data);
 
 $_SESSION['screenshot'] = session_id() . '.jpg';
 $_SESSION['feedback'] = $feedback;
