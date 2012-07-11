@@ -3,6 +3,7 @@
 session_start();
 
 $dir = opendir(dirname(__FILE__) . '/data/');
+$filename = session_id() . time() . '.jpg'
 
 // delete old screenshots
 if($dir) {
@@ -29,9 +30,9 @@ if(isset($_POST['screenshot'])){
 }
 
 // attach ScreenShot
-file_put_contents($dir . session_id() . '.jpg', $data);
+file_put_contents($dir . $filename, $data);
 
-$_SESSION['screenshot'] = session_id() . '.jpg';
+$_SESSION['screenshot'] = $filename;
 $_SESSION['feedback'] = $feedback;
 
 
