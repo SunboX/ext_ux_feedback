@@ -4,10 +4,10 @@ require_once dirname(__FILE__) . '/../lib/swift_mailer/swift_required.php';
 
 $data = null;
 
-$feedback  = 'Server Datum/Zeit: ' . date('d.m.Y - H:i:s') . ' (Beginn Zusammenstellung E-Mail - Server)' . "\n\n";
-$feedback .= 'Client Datum/Zeit: ' . date('d.m.Y - H:i:s', strtotime($_POST['datetime'])) . ' (Beginn Feedback-Versand - Client)' . "\n\n";
+$feedback  = 'Server Date/Time: ' . date('Y-m-d - H:i:s') . ' (start building eMail - server)' . "\n\n";
+$feedback .= 'Client Date/Time: ' . date('Y-m-d - H:i:s', strtotime($_POST['datetime'])) . ' (start sending feedback - client)' . "\n\n";
 $feedback .= 'Client Browser: ' . $_POST['useragent'] . "\n\n";
-$feedback .= 'Client Betriebssystem: ' . $_POST['platform'] . "\n\n";
+$feedback .= 'Client OS: ' . $_POST['platform'] . "\n\n";
 
 $feedback .= 'Feedback: ' . "\n\n" . $_POST['feedback'];
 
