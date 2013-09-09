@@ -12,17 +12,20 @@
  * Autoloader and dependency injection initialization for Swift Mailer.
  */
 
-if (defined('SWIFT_REQUIRED_LOADED'))
-	return;
+if (defined('SWIFT_REQUIRED_LOADED')) {
+    return;
+}
 
 define('SWIFT_REQUIRED_LOADED', true);
 
 //Load Swift utility class
 require dirname(__FILE__) . '/classes/Swift.php';
 
-function _swiftmailer_init()
-{
-  require dirname(__FILE__) . '/swift_init.php';
+if (!function_exists('_swiftmailer_init')) {
+    function _swiftmailer_init()
+    {
+        require dirname(__FILE__) . '/swift_init.php';
+    }
 }
 
 //Start the autoloader and lazy-load the init script to set up dependency injection
