@@ -6,11 +6,10 @@
     
     <title>ExtTop - Desktop Sample App</title>
 
-    <link rel="stylesheet" type="text/css" href="../lib/extjs-4.1.1/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/extjs/resources/css/ext-all.css" />
     <link rel="stylesheet" type="text/css" href="desktop/css/desktop.css" />
     
-    
-    <!-- https://github.com/bondehagen/html2canvas -->
+    <!-- https://github.com/niklasvh/html2canvas/ -->
     <script src="../lib/html2canvas/Core.js"></script>
     <script src="../lib/html2canvas/Util.js"></script>
     <script src="../lib/html2canvas/Support.js"></script>
@@ -20,9 +19,8 @@
     <script src="../lib/html2canvas/Renderer.js"></script>
     <script src="../lib/html2canvas/Preload.js"></script>
     <script src="../lib/html2canvas/renderers/Canvas.js"></script>
-    
 
-    <script src="../lib/extjs-4.1.1/ext-all.js"></script>
+    <script src="../lib/extjs/ext-all.js"></script>
     <script>
     
         Ext.Loader.setConfig({
@@ -31,8 +29,8 @@
         });
         Ext.Loader.setPath({
             'Ext.ux.desktop': 'desktop/js',
-            'Ux.feedback': '../ux/feedback/',
-            MyDesktop: 'desktop/'
+            'Ux.feedback':    '../ux/feedback/',
+            'MyDesktop':      'desktop/'
         });
         
     </script>
@@ -40,10 +38,9 @@
     <script>
 
         Ext.require('MyDesktop.App');
-
-        var myDesktopApp;
+        
         Ext.onReady(function () {
-            myDesktopApp = new MyDesktop.App();
+            new MyDesktop.App();
         });
         
     </script>

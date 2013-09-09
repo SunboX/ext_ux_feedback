@@ -24,7 +24,6 @@ Ext.define('MyDesktop.App', {
 
 //        'MyDesktop.Blockalanche',
         'MyDesktop.Settings',
-        
         'Ux.feedback.FeedbackButton'
     ],
 

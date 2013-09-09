@@ -1,11 +1,15 @@
 /**
- * Copyright (c) 2012 André Fiedler, <https://twitter.com/sonnenkiste>
+ * Copyright (c) 2012 - 2013 André Fiedler, <https://twitter.com/sonnenkiste>
  *
  * license: MIT-style license
  */
 
 Ext.define('Ux.feedback.FeedbackButton', {
     extend: 'Ext.Button',
+    
+    requires: [
+        'Ux.feedback.FeedbackWindow'
+    ],
     
     alias: 'widget.feedbackButton',
     
